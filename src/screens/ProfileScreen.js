@@ -25,7 +25,7 @@ function ProfileScreen() {
               <h3>Plans</h3>
               <PlansScreen />
               <button
-                onClick={() => auth.getAuth().signOut()}
+                onClick={() => auth.signOut()}
                 className="profileScreen__signOut"
               >
                 Sign Out

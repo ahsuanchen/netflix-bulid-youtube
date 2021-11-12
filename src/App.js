@@ -15,7 +15,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = auth.getAuth().onAuthStateChanged((userAuth) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         //Log in
         dispatch(

@@ -5,11 +5,11 @@ import "./SignupScreen.css";
 function SignUpScreen() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+
   const register = (e) => {
     e.preventDefault();
     auth
       .createUserWithEmailAndPassword(
-        auth.getAuth(),
         emailRef.current.value,
         passwordRef.current.value
       )
@@ -18,7 +18,6 @@ function SignUpScreen() {
       })
       .catch((err) => {
         alert(err.message);
-        console.log(err);
       });
   };
 
@@ -26,7 +25,6 @@ function SignUpScreen() {
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(
-        auth.getAuth(),
         emailRef.current.value,
         passwordRef.current.value
       )
@@ -35,7 +33,6 @@ function SignUpScreen() {
       })
       .catch((err) => {
         alert(err.message);
-        console.log(err);
       });
   };
 
@@ -45,7 +42,7 @@ function SignUpScreen() {
         <h1>Sign In</h1>
         <input ref={emailRef} type="email" placeholder="Email" />
         <input ref={passwordRef} type="password" placeholder="Password" />
-        <button type="submit" onclick={signIn}>
+        <button type="submit" onClick={signIn}>
           Sign In
         </button>
         <h4>
